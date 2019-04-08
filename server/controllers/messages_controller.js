@@ -37,7 +37,7 @@ module.exports ={
     console.log(message)
     messages[index] = {
       id: message.id,
-      text: `${name}  --  ${text}` || text,
+      text: `${name}  --  ${text}` || message.text,
       time: message.time
     }
     res.status(200).send(messages)
