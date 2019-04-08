@@ -1,11 +1,13 @@
 let messages = []
 
 let id = 0
-
+let name = 'Alex';
 module.exports ={
   create: (req, res)=>{
 
     let {text,time} = req.body
+
+    text = `${name}  --  ${text}`
     
     messages.push({id, text, time})
     id++
@@ -35,7 +37,7 @@ module.exports ={
     console.log(message)
     messages[index] = {
       id: message.id,
-      text: text||message.text,
+      text: `${name}  --  ${text}` || text,
       time: message.time
     }
     res.status(200).send(messages)
